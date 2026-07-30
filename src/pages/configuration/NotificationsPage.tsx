@@ -1,4 +1,4 @@
-﻿import { useForm, useWatch } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod/v4';
 import { Send, Users, User, Bell, Smartphone } from 'lucide-react';
@@ -159,7 +159,7 @@ export function NotificationsPage() {
             </div>
 
             {/* Mock écran téléphone — toujours sombre */}
-            <div className="bg-asv-phone rounded-2xl p-3.5 overflow-hidden">
+            <div className="bg-rama-phone rounded-2xl p-3.5 overflow-hidden">
               {/* Barre de statut */}
               <div className="flex items-center justify-between mb-4 px-1">
                 <span className="text-white/40 text-[9px] font-mono">9:41</span>
@@ -179,7 +179,7 @@ export function NotificationsPage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-baseline justify-between gap-1 mb-0.5">
                       <span className="text-[9px] font-bold text-white/50 uppercase tracking-wider truncate">
-                        Arche Source de Vie
+                        Rama Lubumbashi
                       </span>
                       <span className="text-[9px] text-white/30 shrink-0">maintenant</span>
                     </div>

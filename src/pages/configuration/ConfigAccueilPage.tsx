@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client/react';
 import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -312,7 +312,7 @@ export function ConfigAccueilPage() {
               <span className="text-xs font-bold text-accent-500 uppercase tracking-widest">Aperçu</span>
             </div>
 
-            <div className="bg-asv-phone rounded-2xl p-3.5 overflow-hidden shadow-xl">
+            <div className="bg-rama-phone rounded-2xl p-3.5 overflow-hidden shadow-xl">
               <div className="flex items-center justify-between mb-3 px-1">
                 <span className="text-white/40 text-[9px] font-mono">9:41</span>
                 <div className="flex items-center gap-1">
@@ -323,11 +323,11 @@ export function ConfigAccueilPage() {
               </div>
 
               <div className="flex items-center justify-between mb-3 px-0.5">
-                <span className="text-[11px] font-black text-white tracking-tight">Arche Source de Vie</span>
+                <span className="text-[11px] font-black text-white tracking-tight">Rama Lubumbashi</span>
                 <div className="w-5 h-5 rounded-full bg-primary-500/30 border border-primary-400/30" />
               </div>
 
-              <div className="relative rounded-xl overflow-hidden mb-3 aspect-video bg-asv-phone-media flex items-center justify-center">
+              <div className="relative rounded-xl overflow-hidden mb-3 aspect-video bg-rama-phone-media flex items-center justify-center">
                 {activeImages.length > 0 ? (
                   <img 
                     src={activeImages[safeIdx].imageUrl} 

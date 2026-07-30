@@ -29,9 +29,9 @@ const LIMIT = 10;
 
 const STATUT_OPTIONS = [
   { value: 'BROUILLON', label: 'Brouillon' },
-  { value: 'PUBLIE', label: 'Publié' },
-  { value: 'ANNULE', label: 'Annulé' },
-  { value: 'TERMINE', label: 'Terminé' },
+  { value: 'PUBLIE', label: 'Publiï¿½' },
+  { value: 'ANNULE', label: 'Annulï¿½' },
+  { value: 'TERMINE', label: 'Terminï¿½' },
 ];
 
 const programmeSchema = z.object({
@@ -120,7 +120,7 @@ export function ProgrammesCultePage() {
         heure: '',
         lieu: '',
         imageExterneUrl: '',
-        organisateur: 'Arche Source de Vie',
+        organisateur: 'Rama Lubumbashi',
         lienYoutube: '',
         statut: 'BROUILLON',
       });
@@ -146,10 +146,10 @@ export function ProgrammesCultePage() {
 
         if (editing) {
           await modifierProgramme({ variables: { id: editing.id, input } });
-          toast.success('Programme modifié');
+          toast.success('Programme modifiï¿½');
         } else {
           await creerProgramme({ variables: { input } });
-          toast.success('Programme créé');
+          toast.success('Programme crï¿½ï¿½');
         }
         closeForm();
         refetch();
@@ -164,7 +164,7 @@ export function ProgrammesCultePage() {
     await run(async () => {
       try {
         await supprimerProgramme({ variables: { id: toDelete.id } });
-        toast.success('Programme supprimé');
+        toast.success('Programme supprimï¿½');
         setToDelete(null);
         refetch();
       } catch {
@@ -211,7 +211,7 @@ export function ProgrammesCultePage() {
           </div>
           <div className="flex items-center gap-1.5 text-[10px] text-accent-400 font-medium uppercase tracking-tight">
             <Clock size={10} />
-            {row.original.heure || 'Heure non précisée'}
+            {row.original.heure || 'Heure non prï¿½cisï¿½e'}
           </div>
         </div>
       ),
@@ -254,7 +254,7 @@ export function ProgrammesCultePage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-black text-accent-900 tracking-tight">Programmes de Culte</h1>
-          <p className="text-sm text-accent-400 font-medium italic">Gérez la diffusion et la planification de vos cultes en ligne</p>
+          <p className="text-sm text-accent-400 font-medium italic">Gï¿½rez la diffusion et la planification de vos cultes en ligne</p>
         </div>
         <Button 
           variant="dark" 
@@ -268,7 +268,7 @@ export function ProgrammesCultePage() {
       <SearchInput
         value={search}
         onChange={(v) => { setSearch(v); setOffset(0); }}
-        placeholder="Rechercher par titre, lieu, organisateur…"
+        placeholder="Rechercher par titre, lieu, organisateurï¿½"
       />
 
       <div className="bg-surface rounded-lg border border-accent-200 overflow-hidden">
@@ -280,14 +280,14 @@ export function ProgrammesCultePage() {
           offset={offset}
           total={data?.getEvenements.totalCount ?? 0}
           onPageChange={setOffset}
-          emptyMessage="Aucun programme de culte planifié."
+          emptyMessage="Aucun programme de culte planifiï¿½."
         />
       </div>
 
       <ConfirmModal
         isOpen={!!toDelete}
         title="Supprimer ce programme"
-        message={`Voulez-vous supprimer le programme « ${toDelete?.titre} » ? Cette action est irréversible.`}
+        message={`Voulez-vous supprimer le programme ï¿½ ${toDelete?.titre} ï¿½ ? Cette action est irrï¿½versible.`}
         confirmLabel="Supprimer"
         onConfirm={() => void handleSupprimer()}
         onCancel={() => setToDelete(null)}
@@ -309,7 +309,7 @@ export function ProgrammesCultePage() {
               onClick={handleSubmit(onSubmit)} 
               isLoading={isSubmitting}
             >
-              {editing ? 'Enregistrer les modifications' : 'Créer le programme'}
+              {editing ? 'Enregistrer les modifications' : 'Crï¿½er le programme'}
             </Button>
           </>
         )}
@@ -319,7 +319,7 @@ export function ProgrammesCultePage() {
             <label className="text-[10px] font-bold text-accent-400 uppercase tracking-widest">Titre du culte <span className="text-danger">*</span></label>
             <input
               {...register('titre')}
-              placeholder="Ex: Culte de Dominical - Thème: La puissance de la foi"
+              placeholder="Ex: Culte de Dominical - Thï¿½me: La puissance de la foi"
               className="w-full text-sm px-4 py-2.5 bg-accent-50 border border-accent-200 rounded-lg outline-none focus:border-primary-500 transition-all font-sans"
             />
             {errors.titre && <p className="text-[10px] text-danger font-bold mt-1 uppercase">{errors.titre.message}</p>}
@@ -339,7 +339,7 @@ export function ProgrammesCultePage() {
             </div>
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold text-accent-400 uppercase tracking-widest flex items-center gap-1.5">
-                <Clock size={10} /> Heure de début
+                <Clock size={10} /> Heure de dï¿½but
               </label>
               <input
                 type="time"
@@ -385,11 +385,11 @@ export function ProgrammesCultePage() {
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-[10px] font-bold text-accent-400 uppercase tracking-widest">Description / Détails</label>
+            <label className="text-[10px] font-bold text-accent-400 uppercase tracking-widest">Description / Dï¿½tails</label>
             <textarea
               {...register('description')}
               rows={3}
-              placeholder="Orateur, programme détaillé..."
+              placeholder="Orateur, programme dï¿½taillï¿½..."
               className="w-full text-sm px-4 py-2.5 bg-accent-50 border border-accent-200 rounded-lg outline-none focus:border-primary-500 resize-none transition-all font-sans"
             />
           </div>
@@ -404,8 +404,8 @@ export function ProgrammesCultePage() {
                 onChange={setImageUrl}
               />
               <div className="space-y-1.5 text-[10px] text-accent-500 italic">
-                <p>L'image sera utilisée comme miniature sur l'application mobile.</p>
-                <p className="mt-2 text-accent-400">Si non précisée, l'icône par défaut sera utilisée.</p>
+                <p>L'image sera utilisï¿½e comme miniature sur l'application mobile.</p>
+                <p className="mt-2 text-accent-400">Si non prï¿½cisï¿½e, l'icï¿½ne par dï¿½faut sera utilisï¿½e.</p>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useQuery, useMutation } from '@apollo/client/react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { z } from 'zod/v4';
@@ -205,7 +205,7 @@ export function ConfigDonsPage() {
                   </label>
                   <input
                     {...register(`coordonnees.${idx}.detail`)}
-                    placeholder="Ex: Au nom de Arche Source de Vie"
+                    placeholder="Ex: Au nom de Rama Lubumbashi"
                     className="w-full text-sm px-3 py-2 bg-white border border-accent-200 rounded-lg outline-none focus:border-primary-400 transition-colors"
                   />
                 </div>

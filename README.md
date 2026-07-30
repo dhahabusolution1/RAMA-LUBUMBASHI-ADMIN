@@ -1,6 +1,6 @@
-# La Parole Éternelle v2 — Dashboard Administrateur Web
+# Rama Lubumbashi — Dashboard Administrateur Web
 
-Interface d'administration complète pour la gestion de l'église évangélique **La Parole Éternelle** (Lubumbashi, RDC). Construite en React 19 + TypeScript, elle consomme l'API GraphQL du backend via Apollo Client v4.
+Interface d'administration complète pour la gestion de l'église évangélique **Rama Lubumbashi** (Lubumbashi, RDC). Construite en React 19 + TypeScript, elle consomme l'API GraphQL du backend via Apollo Client v4.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client/react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -158,7 +158,7 @@ export function EglisesPage() {
       <div className="flex items-center justify-between mb-5">
         <div>
           <h2 className="text-base font-semibold text-accent-900">Gestion des Églises</h2>
-          <p className="text-xs text-accent-400 mt-0.5">Antennes et sites de Arche Source de Vie</p>
+          <p className="text-xs text-accent-400 mt-0.5">Sites de Rama Lubumbashi</p>
         </div>
         <button
           onClick={openAdd}
@@ -200,7 +200,7 @@ export function EglisesPage() {
                 </label>
                 <input
                   {...register('nom')}
-                  placeholder="Ex: Arche Source de Vie — Pointe-Noire"
+                  placeholder="Ex: Cathédrale des Vainqueurs"
                   className="w-full text-sm px-3 py-2 border border-accent-200 rounded outline-none focus:border-primary-400"
                 />
                 {errors.nom && <p className="text-xs text-red-500 mt-0.5">{errors.nom.message}</p>}

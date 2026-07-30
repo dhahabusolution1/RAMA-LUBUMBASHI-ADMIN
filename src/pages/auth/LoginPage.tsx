@@ -1,4 +1,4 @@
-﻿import { useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod/v4';
 import { useMutation } from '@apollo/client/react';
@@ -63,7 +63,7 @@ export function LoginPage() {
     <div className="min-h-screen flex">
 
       {/* ── Colonne gauche — Branding (masquée sur mobile) ─────── */}
-      <div className="hidden lg:flex lg:w-1/2 bg-pe-gradient flex-col justify-between p-12 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-rama-gradient flex-col justify-between p-12 relative overflow-hidden">
         {/* Cercles décoratifs */}
         <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white/5 pointer-events-none" />
         <div className="absolute -bottom-32 -right-16 w-[28rem] h-[28rem] rounded-full bg-white/5 pointer-events-none" />
@@ -77,7 +77,7 @@ export function LoginPage() {
             className="w-16 h-16 object-contain mb-6"
           />
           <h1 className="text-3xl font-bold text-white tracking-tight leading-tight">
-            Arche Source de Vie
+            Rama Lubumbashi
           </h1>
           <p className="text-white/60 text-sm mt-2">Lubumbashi — République Démocratique du Congo</p>
         </div>
@@ -99,7 +99,7 @@ export function LoginPage() {
 
         {/* Footer colonne */}
         <p className="relative z-10 text-white/30 text-xs">
-          Arche Source de Vie v2 — Administration
+          Rama Lubumbashi v2 — Administration
         </p>
       </div>
 
@@ -113,7 +113,7 @@ export function LoginPage() {
             alt="Logo"
             className="w-20 h-20 object-contain mb-3"
           />
-          <h1 className="text-xl font-bold text-accent-900 uppercase tracking-tight">Arche Source de Vie</h1>
+          <h1 className="text-xl font-bold text-accent-900 uppercase tracking-tight">Rama Lubumbashi</h1>
           <p className="text-xs text-accent-400 mt-1">Interface d'administration</p>
         </div>
 
@@ -133,7 +133,7 @@ export function LoginPage() {
                 id="email"
                 type="email"
                 autoComplete="email"
-                placeholder="admin@archesourcevie.cd"
+                placeholder="admin@ramalubumbashi.org"
                 {...register('email')}
                 className="w-full px-3 py-2.5 text-sm border border-accent-200 rounded-lg bg-white text-accent-900 placeholder-accent-300 outline-none focus:border-primary-500 transition-colors"
               />
@@ -182,7 +182,7 @@ export function LoginPage() {
         </div>
 
         <p className="text-xs text-accent-300 mt-10">
-          Arche Source de Vie v2 — Administration
+          Rama Lubumbashi v2 — Administration
         </p>
       </div>
 

@@ -227,7 +227,7 @@ export function DashboardPage() {
               <p className="py-4 text-xs italic text-white/50">Aucun verset programmé.</p>
             ) : (
               <div className="space-y-4">
-                <blockquote className="text-base font-bold leading-relaxed italic border-l-2 border-amber-400 pl-4 text-amber-100">
+                <blockquote className="text-base font-bold leading-relaxed italic border-r-2 border-amber-400 pl-4 text-amber-100">
                   &ldquo;{verset.texte}&rdquo;
                 </blockquote>
                 <div>

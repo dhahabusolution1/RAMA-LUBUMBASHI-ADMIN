@@ -4,14 +4,14 @@ import { Moon, Sun } from 'lucide-react';
 type ThemeMode = 'light' | 'dark';
 
 function readTheme(): ThemeMode {
-  const saved = localStorage.getItem('asv-theme');
+  const saved = localStorage.getItem('rama-theme');
   if (saved === 'dark' || saved === 'light') return saved;
   return 'light';
 }
 
 function applyTheme(theme: ThemeMode) {
   document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('asv-theme', theme);
+  localStorage.setItem('rama-theme', theme);
 }
 
 export function ThemeToggle() {

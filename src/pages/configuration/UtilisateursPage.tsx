@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client/react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -287,7 +287,7 @@ export function UtilisateursPage() {
                 <input
                   {...register('email')}
                   type="email"
-                  placeholder="admin@archesourcevie.cd"
+                  placeholder="admin@ramalubumbashi.org"
                   className="w-full text-sm px-3 py-2 border border-accent-200 rounded outline-none focus:border-primary-400"
                 />
                 {errors.email && <p className="text-xs text-red-500 mt-0.5">{errors.email.message}</p>}
