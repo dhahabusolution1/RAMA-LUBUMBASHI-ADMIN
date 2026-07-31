@@ -12,9 +12,9 @@ const VARIANT_CLASSES: Record<BadgeVariant, string> = {
   success: 'bg-emerald-50 text-emerald-700 border-emerald-100',
   warning: 'bg-amber-50 text-amber-700 border-amber-100',
   danger:  'bg-red-50 text-red-700 border-red-100',
-  info:    'bg-sky-50 text-sky-700 border-sky-100',
+  info:    'bg-[#e91e8c]/10 text-[#c2185b] border-[#f8bbd9]',
   neutral: 'bg-accent-50 text-accent-600 border-accent-100',
-  dark:    'bg-primary-900 text-accent-900 border-primary-800',
+  dark:    'bg-primary-900 text-white border-primary-800',
 };
 
 const DOT_CLASSES: Record<BadgeVariant, string> = {
@@ -22,9 +22,9 @@ const DOT_CLASSES: Record<BadgeVariant, string> = {
   success: 'bg-emerald-500',
   warning: 'bg-amber-500',
   danger:  'bg-red-500',
-  info:    'bg-sky-500',
+  info:    'bg-[#e91e8c]',
   neutral: 'bg-accent-400',
-  dark:    'bg-accent-900',
+  dark:    'bg-white',
 };
 
 // ─── Mappages statuts → variantes ─────────────────────────────────────────────

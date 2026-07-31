@@ -38,6 +38,10 @@
   --color-surface-soft: #f3f8fc;
   --color-background:   #eef4f9;
 
+  --rama-accent: #e91e8c;
+  --rama-sidebar-bg: #0e4d7a;
+  --rama-sidebar-active: #e91e8c;
+
   --font-family-sans: "Montserrat", system-ui, sans-serif;
 
   --radius-sm:   4px;
@@ -149,11 +153,11 @@ body {
 }
 
 .bg-rama-sidebar {
-  background: #0e4d7a;
+  background: var(--rama-sidebar-bg, #0e4d7a);
 }
 
 [data-theme="dark"] .bg-rama-sidebar {
-  background: var(--rama-sidebar-bg, #04141f);
+  background: #04141f;
 }
 
 .bg-rama-phone {
@@ -163,6 +167,23 @@ body {
 
 .bg-rama-phone-media {
   background: #0a1620;
+}
+
+/* Bordures plus lisibles en mode clair */
+.border-accent-100 {
+  border-color: #d7e4ef;
+}
+
+.border-accent-200 {
+  border-color: #c5d6e6;
+}
+
+[data-theme="dark"] .border-accent-100 {
+  border-color: var(--color-accent-200);
+}
+
+[data-theme="dark"] .border-accent-200 {
+  border-color: var(--color-accent-200);
 }
 
 [data-theme="dark"] .bg-white {
@@ -240,4 +261,17 @@ body {
 
 [data-theme="dark"] .border-2.border-white {
   border-color: var(--color-surface) !important;
+}
+
+[data-theme="dark"] .text-\[\#c2185b\],
+[data-theme="dark"] .text-\[\#e91e8c\] {
+  color: #f57bb8 !important;
+}
+
+[data-theme="dark"] .bg-\[\#e91e8c\]\/10 {
+  background-color: rgb(233 30 140 / 0.18) !important;
+}
+
+[data-theme="dark"] .border-\[\#f8bbd9\] {
+  border-color: rgb(233 30 140 / 0.35) !important;
 }

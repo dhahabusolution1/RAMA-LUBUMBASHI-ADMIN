@@ -29,16 +29,16 @@ interface DashboardData { getDashboard: Dashboard; }
 interface VersetData { getVersetDuJour: VersetJour | null; }
 
 const INTERACTION_COLORS = [
-  '#1e40af', '#0891b2', '#059669', '#d97706', '#7c3aed', '#db2777',
+  '#1b6ca8', '#0e4d7a', '#e91e8c', '#4499cc', '#061e30', '#f048a0',
 ];
 
 const QUICK_ACTIONS = [
   { label: 'Nouvel événement', icon: Plus, to: '/contenus/evenements', color: 'text-primary-600 bg-primary-50' },
-  { label: 'Nouveau sermon', icon: PlayCircle, to: '/contenus/sermons', color: 'text-success bg-success/10' },
-  { label: 'Verset du jour', icon: BookOpen, to: '/contenus/versets', color: 'text-info bg-info/10' },
-  { label: 'Demandes prière', icon: HandHeart, to: '/interactions/prieres', color: 'text-warning bg-warning/10' },
-  { label: 'Rendez-vous', icon: CalendarCheck, to: '/interactions/rendezvous', color: 'text-accent-600 bg-accent-100' },
-  { label: 'Intégrations', icon: UserPlus, to: '/interactions/integration', color: 'text-secondary bg-secondary/10' },
+  { label: 'Nouveau sermon', icon: PlayCircle, to: '/contenus/sermons', color: 'text-primary-700 bg-primary-100' },
+  { label: 'Verset du jour', icon: BookOpen, to: '/contenus/versets', color: 'text-[#e91e8c] bg-[#e91e8c]/10' },
+  { label: 'Demandes prière', icon: HandHeart, to: '/interactions/prieres', color: 'text-[#c2185b] bg-[#e91e8c]/10' },
+  { label: 'Rendez-vous', icon: CalendarCheck, to: '/interactions/rendezvous', color: 'text-primary-600 bg-primary-50' },
+  { label: 'Intégrations', icon: UserPlus, to: '/interactions/integration', color: 'text-accent-600 bg-accent-100' },
 ];
 
 export function DashboardPage() {
@@ -111,9 +111,9 @@ export function DashboardPage() {
             <StatCard title="Églises" value={loading ? '—' : (dashboard?.totalEglises ?? 0)}
               icon={<Church />} variant="primary" description="Implantations actives" />
             <StatCard title="Cellules" value={loading ? '—' : (dashboard?.totalCellules ?? 0)}
-              icon={<Users2 />} variant="info" description="Groupes de maison" />
+              icon={<Users2 />} variant="primary" description="Groupes de maison" />
             <StatCard title="Sermons" value={loading ? '—' : (dashboard?.totalSermons ?? 0)}
-              icon={<PlayCircle />} variant="success" description="Vidéos indexées" />
+              icon={<PlayCircle />} variant="info" description="Vidéos indexées" />
             <StatCard title="Membres" value={loading ? '—' : (dashboard?.totalUtilisateurs ?? 0)}
               icon={<Network />} variant="accent" description="Comptes actifs" />
           </section>
@@ -134,7 +134,7 @@ export function DashboardPage() {
                             <Cell key={i} fill={INTERACTION_COLORS[i % INTERACTION_COLORS.length]} />
                           ))}
                         </Pie>
-                        <Tooltip contentStyle={{ fontSize: '11px', borderRadius: '4px', border: '1px solid #e2e8f0' }} />
+                        <Tooltip contentStyle={{ fontSize: '11px', borderRadius: '4px', border: '1px solid #c5d6e6', background: 'var(--color-surface)', color: 'var(--color-accent-900)' }} />
                       </PieChart>
                     </ResponsiveContainer>
                   </div>
@@ -210,13 +210,13 @@ export function DashboardPage() {
         <div className="xl:col-span-4 space-y-6">
           
           {/* Verset du Jour — Style Épuré */}
-          <section className="bg-primary-800 rounded-lg p-6 text-white border-l-4 border-amber-400">
+          <section className="bg-primary-900 rounded-lg p-6 text-white border-l-4 border-[#e91e8c]">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-amber-300" />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-amber-300/80">Édification</span>
+                <BookOpen className="w-4 h-4 text-[#f57bb8]" />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#f57bb8]/90">Édification</span>
               </div>
-              <button onClick={() => navigate('/contenus/versets')} className="p-1 hover:bg-white/10 rounded transition-colors cursor-pointer">
+              <button onClick={() => navigate('/contenus/versets')} className="p-1 hover:bg-white/10 rounded transition-colors cursor-pointer text-white/80">
                 <Pencil className="w-4 h-4" />
               </button>
             </div>
@@ -227,12 +227,12 @@ export function DashboardPage() {
               <p className="py-4 text-xs italic text-white/50">Aucun verset programmé.</p>
             ) : (
               <div className="space-y-4">
-                <blockquote className="text-base font-bold leading-relaxed italic border-r-2 border-amber-400 pl-4 text-amber-100">
+                <blockquote className="text-base font-bold leading-relaxed italic border-r-2 border-[#e91e8c] pl-4 text-white">
                   &ldquo;{verset.texte}&rdquo;
                 </blockquote>
                 <div>
                   <p className="text-sm font-bold text-white">{verset.reference}</p>
-                  <p className="text-[10px] text-amber-300/70 font-bold uppercase tracking-widest mt-1">{verset.versionBiblique}</p>
+                  <p className="text-[10px] text-[#f57bb8]/80 font-bold uppercase tracking-widest mt-1">{verset.versionBiblique}</p>
                 </div>
                 {verset.meditation && (
                   <div className="pt-3 border-t border-white/10">
@@ -250,9 +250,9 @@ export function DashboardPage() {
             <h3 className="text-xs font-bold text-accent-900 uppercase tracking-widest mb-4 border-b border-accent-100 pb-3">En attente</h3>
             <div className="space-y-2">
               {[
-                { label: 'Requêtes prière', count: dashboard?.totalRequetesEnAttente, to: '/interactions/prieres', icon: HandHeart, color: 'bg-amber-50 text-amber-700' },
-                { label: 'Rendez-vous', count: dashboard?.totalRendezVousEnAttente, to: '/interactions/rendezvous', icon: CalendarCheck, color: 'bg-sky-50 text-sky-700' },
-                { label: 'Messages non lus', count: dashboard?.totalMessagesNonLus, to: '/interactions/messagerie', icon: MessageSquare, color: 'bg-primary-50 text-primary-700' },
+                { label: 'Requêtes prière', count: dashboard?.totalRequetesEnAttente, to: '/interactions/prieres', icon: HandHeart, color: 'bg-[#e91e8c]/10 text-[#c2185b]' },
+                { label: 'Rendez-vous', count: dashboard?.totalRendezVousEnAttente, to: '/interactions/rendezvous', icon: CalendarCheck, color: 'bg-primary-50 text-primary-700' },
+                { label: 'Messages non lus', count: dashboard?.totalMessagesNonLus, to: '/interactions/messagerie', icon: MessageSquare, color: 'bg-primary-100 text-primary-800' },
               ].map((item) => (
                 <div key={item.to} onClick={() => navigate(item.to)} className="flex items-center justify-between p-3 rounded-md border border-accent-100 hover:bg-accent-50 transition-colors cursor-pointer">
                   <div className="flex items-center gap-3">

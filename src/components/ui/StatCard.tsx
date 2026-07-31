@@ -13,7 +13,7 @@ export function StatCard({ title, value, icon, description, variant = 'accent' }
     primary: 'border-primary-200 bg-surface',
     success: 'border-emerald-200 bg-surface',
     warning: 'border-amber-200 bg-surface',
-    info:    'border-sky-200 bg-surface',
+    info:    'border-[#f8bbd9] bg-surface',
     accent:  'border-accent-200 bg-surface',
   };
 
@@ -21,7 +21,7 @@ export function StatCard({ title, value, icon, description, variant = 'accent' }
     primary: 'bg-primary-500 text-white',
     success: 'bg-emerald-500 text-white',
     warning: 'bg-amber-500 text-white',
-    info:    'bg-sky-500 text-white',
+    info:    'bg-[#e91e8c] text-white',
     accent:  'bg-accent-600 text-white',
   };
 
@@ -29,7 +29,7 @@ export function StatCard({ title, value, icon, description, variant = 'accent' }
     primary: 'text-primary-600',
     success: 'text-emerald-600',
     warning: 'text-amber-600',
-    info:    'text-sky-600',
+    info:    'text-[#e91e8c]',
     accent:  'text-accent-500',
   };
 
